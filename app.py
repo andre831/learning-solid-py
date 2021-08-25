@@ -8,8 +8,9 @@ from conta_corrente import Conta_corrente
 print('Bem-Vindo ao Banco PDM')
 
 option = 0
-option_caixa_eletronico = 0
+option_conta = 0
 option_conta_poupanca = 0
+option_conta_corrente= 0
 
 while option <= 1:
    
@@ -33,14 +34,49 @@ while option <= 1:
         Cliente_Externo.reconhecido_user('')
         print(' ' * 20)
         print('Okay, agora você pode utilizar o caixa eletrônico')
-        option_caixa_eletronico = int(input(''' [1] Conta Poupança --- [2] Conta Corrente 
+        option_conta = int(input(''' [1] Conta Poupança --- [2] Conta Corrente 
         Resposta: '''))
 
-        if option_caixa_eletronico == 1:
+        if option_conta == 1 :
+
             print(' ' * 20)
             print('Olá, esta é a sua conta poupança')
-            option_conta_poupanca = int(input('''Qual operação você deseja realizar:
-        [1] Deposito
-        [2] Saque
-        Resposta: '''))
 
+            option_conta_poupanca = int(input('''Qual operação você deseja realizar:
+            [1] Deposito
+            [2] Saque
+            Resposta: '''))
+
+            if option_conta_poupanca == 1:
+                print('Ok!')
+                print(' ' * 20)
+                acao = Caixa_eletronico(Conta_poupanca())
+                acao.depositar_valor(valor = input('Digite o valor: '))
+            
+            elif option_conta_poupanca == 2:
+                print('Ok!')
+                print(' ' * 20)
+                acao = Caixa_eletronico(Conta_poupanca())
+                acao.sacar_valor(valor = input('Digite o valor: '))
+                
+        elif option_conta == 2 :
+
+            print(' ' * 20)
+            print('Olá, esta é a sua conta corrente')
+            
+            option_conta_poupanca = int(input('''Qual operação você deseja realizar:
+            [1] Deposito
+            [2] Saque
+            Resposta: '''))
+
+            if option_conta_poupanca == 1:
+                print('Ok!')
+                print(' ' * 20)
+                acao = Caixa_eletronico(Conta_corrente())
+                acao.depositar_valor(valor = input('Digite o valor: '))
+            
+            elif option_conta_poupanca == 2:
+                print('Ok!')
+                print(' ' * 20)
+                acao = Caixa_eletronico(Conta_corrente())
+                acao.sacar_valor(valor = input('Digite o valor: '))
