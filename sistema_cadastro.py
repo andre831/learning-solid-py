@@ -2,23 +2,25 @@ from time import sleep
 
 class SistemaCadastral:
 
-    def cadastrar(self, nome: str, idade: int) -> None:
-        if self.__verificar_dados(nome, idade):
-             self.__armazernar_usuario(nome, idade)
+    def cadastrar(self, nome: str, cpf: str) -> None:
+        if self.__verificar_dados(nome, cpf):
+             self.__armazernar_usuario(nome, cpf)
         else:
             self.__indicar_erro()
 
 
-    def __verificar_dados(self, nome: str, idade: int) -> bool:
-        if isinstance(nome, str) and isinstance(idade, int):
+    def __verificar_dados(self, nome: str, cpf: str) -> bool:
+        if isinstance(nome, str) and isinstance(cpf, str):
            return True
         else:
             return False
     
-    def __armazernar_usuario(self, nome: str, idade: int) -> None:
+    def __armazernar_usuario(self, nome: str, cpf: str) -> None:
         print('acessando o banco de dados...')
-        print('Cadastrar o Usuario {}, Idade {}'.format(nome, idade))
+        print(' ' * 20)
+        print('NOME USUÁRIO:  {}, CPF:  {}'.format(nome, cpf))
         sleep(2)
+        print(' ' * 20)
         print('Cadastro concluido')
     
     def __indicar_erro(self) -> None:

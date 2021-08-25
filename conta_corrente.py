@@ -1,6 +1,6 @@
-from tela_caixa_eletronico import Tela_caixa_eletronico
+from tela_caixa_eletronico import Tela_Caixa_Eletronico
 
-class Conta_corrente(Tela_caixa_eletronico):
+class Conta_corrente(Tela_Caixa_Eletronico):
   
     def depositar(self, valor) -> None:
         print('Depositando {} na conta corrente'.format(valor))

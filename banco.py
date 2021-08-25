@@ -1,4 +1,7 @@
 from typing import Type
+from caixa.caixa_eletronico import Caixa_eletronico
+from caixa.conta_poupanca import Conta_poupanca
+from caixa.conta_corrente import Conta_corrente
 
 class Pessoa:
 
@@ -30,8 +33,9 @@ class Clientes(Pessoa):
     def __init__(self):
         super().__init__()
       
-    def sacar(self):
-        Caixa_eletronico.sacar_valor()
+    def sacar(self, valor):
+      caixa = Caixa_eletronico(Conta_poupanca())
+      caixa.depositar_valor(200)
 
 class Camera:
 
@@ -39,4 +43,5 @@ class Camera:
         pessoa.andar()
 
 
-
+andre = Clientes()
+andre.sacar(200)

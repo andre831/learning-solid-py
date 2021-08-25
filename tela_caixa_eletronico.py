@@ -1,6 +1,6 @@
 from abc import ABC, abstractclassmethod
 
-class Tela_caixa_eletronico(ABC):
+class Tela_Caixa_Eletronico(ABC):
 
     @abstractclassmethod
     def depositar(self, valor) -> None:
