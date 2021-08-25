@@ -11,7 +11,10 @@ class Caixa_eletronico:
 
     def depositar_valor(self, valor: any) -> None:
         self.__tela.depositar(valor)
+        print(''*20)
+        print('O valor de {} foi depositado !'.format(valor))
     
     def sacar_valor(self, valor: any) -> None:
         self.__tela.sacar(valor)
-
+        print(''*20)
+        print('O valor de {} foi sacado !'.format(valor))

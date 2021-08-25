@@ -2,7 +2,7 @@ from time import sleep
 
 class SistemaCadastral:
 
-    def cadastrar(self, nome: str, cpf: str) -> None:
+    def cadastro(self, nome: str, cpf: str) -> None:
         if self.__verificar_dados(nome, cpf):
              self.__armazernar_usuario(nome, cpf)
         else:
@@ -21,7 +21,7 @@ class SistemaCadastral:
         print('NOME USUÁRIO:  {}, CPF:  {}'.format(nome, cpf))
         sleep(2)
         print(' ' * 20)
-        print('Cadastro concluido')
+        print('Reconhecimento de cadastro concluído')
     
     def __indicar_erro(self) -> None:
-        print('dados invalidos!')
+        print('dados inválidos!')
